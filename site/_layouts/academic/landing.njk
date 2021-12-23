@@ -1,0 +1,49 @@
+{% extends "templates/base.njk" %}
+
+{% block content %}
+
+{{ content | safe }}
+
+<h2>Recent News</h2>
+
+<ul>
+{% for item in academic.news %}
+    <li>
+        <div>{{ item.date }}</div>
+        <div>{{ item.title }}</div>
+        <div>{{ item.description }}</div>
+    </li>
+{% endfor %}
+</ul>
+
+<h2>Selected Publications</h2>
+
+<ul>
+{% for item in academic.publications %}
+    {% if item.selected %}
+    <li>
+        <div>{{ item.date }}</div>
+        <div>{{ item.title }}</div>
+        <ul>
+            {% for author in item.authors %}
+                <li>{{ author }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+<h2>Service</h2>
+
+<ul>
+{% for item in academic.service %}
+    <li>
+        <div>{{ item.date }}</div>
+        <div>{{ item.description }}</div>
+    </li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

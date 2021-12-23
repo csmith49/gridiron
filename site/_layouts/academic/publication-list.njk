@@ -1,0 +1,24 @@
+{% extends "templates/base.njk" %}
+
+{% block content %}
+
+{{ content | safe }}
+
+<h2>Publications</h2>
+
+<ul>
+{% for publication in academic.publications %}
+    <li>
+        <div>{{ publication.title }}</div>
+        <div>{{ publication.date }}</div>
+        <ul>
+            {% for author in publication.authors %}
+                <li>{{ author }}</li>
+            {% endfor %}
+        </ul>
+        <div>{{ publication.description }}</div>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

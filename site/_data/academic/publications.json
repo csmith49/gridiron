@@ -1,0 +1,13 @@
+[
+    {
+        "date" : "September 2021",
+        "title" : "My TED Talk",
+        "authors" : ["Me"],
+        "location" : "TED Talks, Austin TX",
+        "source" : "/",
+        "description" : "This was my TED talk, where I rambled about myself for 20 minutes.",
+        "selected" : true,
+        "type" : "talk",
+        "notes" : []
+    }
+]
